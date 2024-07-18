@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>WissenInCode</title>
+	<link rel="stylesheet" type="text/css" href="style\index.css">
+	<script src="script/index.js"></script>
+</head>
+<body>
+	<div>
+		<main>
+			<div class="main">
+				<header>
+					<section class="nav-bar">
+						<section class="nav-groub">
+							<section class="nav-logo">
+								<a href="index.html">WVIC WissenVerpacktInCode</a></section>
+								<section class="nav-link">
+									<a href="">Wissen</a>
+									<a href="">Spiele</a>
+									<a href="">Code</a>
+								</section>
+							</section>
+							<section class="nav-user">
+								<a href="" title="Benachrichtigungen"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-200v-80h80v-280q0-83 50-147.5T420-792v-28q0-25 17.5-42.5T480-880q25 0 42.5 17.5T540-820v28q80 20 130 84.5T720-560v280h80v80H160ZM480-80q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80Z"/></svg></a>
+								<button id="nav-change-theme" title="Wechselt Theme"><div id="themeIcon"></div></button>
+							</section>
+						</section>
+					</section>
+				</header>
+				<div class="landing-mitte">
+					<div class="landing">
+						<div class="landing-logo">
+							<h1>WVIC</h1>
+						</div>
+						<div class="landing-aufmacher">
+							<h2>Ein Platz für</h2>
+							<div class="landing-aufmacher-animatedText">
+								<div class="text-item in-place" id="text1"><h2>Wissen</h2></div>
+								<div class="text-item slide-down" id="text2"><h2>Spiele</h2></div>
+								<div class="text-item slide-down" id="text3"><h2>Code</h2></div>
+							</div>
+						</div>
+						<script>
+							let currentIndex = 0;
+							const textElements = [
+								document.getElementById("text1"),
+								document.getElementById("text2"),
+								document.getElementById("text3")
+							];
+					
+							function swapText() {
+								const currentElement = textElements[currentIndex];
+								const nextIndex = (currentIndex + 1) % textElements.length;
+								const nextElement = textElements[nextIndex];
+					
+								currentElement.classList.remove("in-place");
+								currentElement.classList.add("slide-up");
+					
+								nextElement.classList.remove("slide-down");
+								nextElement.classList.add("in-place");
+					
+								setTimeout(() => {
+									currentElement.classList.remove("slide-up");
+									currentElement.classList.add("slide-down");
+								}, 1000); // Zeit muss gleich der Dauer der Transition sein
+					
+								currentIndex = nextIndex;
+							}
+					
+							setInterval(swapText, 4000); // Wechsel alle 3 Sekunden
+						</script>
+					</div>
+					<div class="landing-weiterfürend">
+						<h3>Entdecken, Spielen und verstehen sie Code Inhalte über</h3>
+						<h3>diese Unlicensd Open-Source-Plattform</h3>
+					</div>
+					<div class="landing-button">
+						<a href="" class="landing-button-1">Entdecke Wissen</a>
+						<a href="" class="landing-button-2">Gehe zu Spiele</a>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer>
+			
+		</footer>
+	</div>
+</body>
+</html>
